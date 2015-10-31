@@ -9468,6 +9468,11 @@ namespace std {
     = is_base_of<Base, Derived>::value;
   template <class From, class To> constexpr bool is_convertible_v
     = is_convertible<From, To>::value;
+
+  // See \ref{meta.logical}, logical operator traits:
+  template<class... B> constexpr bool conjunction_v = conjunction<B...>::value;
+  template<class... B> constexpr bool disjunction_v = disjunction<B...>::value;
+  template<class B> constexpr bool negation_v = negation<B>::value;
 } // namespace std
 \end{codeblock}
 
